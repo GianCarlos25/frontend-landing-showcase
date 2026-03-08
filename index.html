@@ -94,6 +94,9 @@
          HERO
     ════════════════════════════════════════════════ -->
     <section class="hero" id="hero" aria-label="Hero">
+      <!-- Background photo -->
+      <div class="hero__photo" aria-hidden="true"></div>
+
       <!-- Ambient orbs -->
       <div class="hero__bg" aria-hidden="true">
         <div class="hero__orb hero__orb--1"></div>
@@ -273,6 +276,15 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════
+         PHOTO GALLERY STRIP
+    ════════════════════════════════════════════════ -->
+    <div class="gallery-strip" aria-label="Studio photos" role="img">
+      <div class="gallery-strip__item gallery-strip__item--1" aria-hidden="true"></div>
+      <div class="gallery-strip__item gallery-strip__item--2" aria-hidden="true"></div>
+      <div class="gallery-strip__item gallery-strip__item--3" aria-hidden="true"></div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
          ABOUT / STORY
     ════════════════════════════════════════════════ -->
     <section class="about section" id="about" aria-label="Our Story">
@@ -281,6 +293,8 @@
         <!-- Visual panel (desktop only) -->
         <div class="about__visual animate-slide-right">
           <div class="about__panel" aria-hidden="true">
+            <div class="about__panel-photo"></div>
+            <div class="about__panel-overlay"></div>
             <div class="about__panel-inner"></div>
             <div class="about__panel-glow"></div>
           </div>
