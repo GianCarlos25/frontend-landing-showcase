@@ -1,0 +1,204 @@
+/* ── Base Styles ─────────────────────────────────────── */
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+}
+
+/* ── Container ──────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+/* ── Section ────────────────────────────────────────── */
+.section {
+  padding-block: clamp(var(--space-10), 8vw, var(--space-16));
+}
+
+/* ── Section Header ─────────────────────────────────── */
+.section-header {
+  text-align: center;
+  max-width: 640px;
+  margin-inline: auto;
+  margin-bottom: clamp(var(--space-6), 6vw, var(--space-10));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.section-sub {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+  max-width: 480px;
+}
+
+/* ── Typography ─────────────────────────────────────── */
+h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(var(--font-size-4xl), 7vw, var(--font-size-7xl));
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(var(--font-size-3xl), 4.5vw, var(--font-size-5xl));
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(var(--font-size-xl), 2.5vw, var(--font-size-2xl));
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h4 {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+}
+
+em {
+  font-style: italic;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Eyebrow ────────────────────────────────────────── */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Badge ──────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 6px 14px;
+  background: rgba(200, 169, 126, 0.1);
+  border: 1px solid rgba(200, 169, 126, 0.25);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.badge--sm {
+  padding: 2px 8px;
+  font-size: 0.6rem;
+}
+
+.badge--pulse::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-success);
+  display: inline-block;
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+/* ── Buttons ────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: 12px 28px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-fast);
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn--lg {
+  padding: 15px 36px;
+  font-size: var(--font-size-base);
+}
+
+.btn--block {
+  width: 100%;
+}
+
+.btn--primary {
+  background: var(--gradient-accent);
+  color: #0D0D12;
+  font-weight: 700;
+}
+
+.btn--primary:hover {
+  box-shadow: 0 8px 30px rgba(200, 169, 126, 0.4);
+}
+
+.btn--outline {
+  border-color: rgba(200, 169, 126, 0.5);
+  color: var(--color-accent);
+  background: transparent;
+}
+
+.btn--outline:hover {
+  background: rgba(200, 169, 126, 0.08);
+  border-color: var(--color-accent);
+}
+
+.btn--ghost {
+  color: var(--color-text-muted);
+  background: transparent;
+}
+
+.btn--ghost:hover {
+  color: var(--color-text-primary);
+}
+
+/* ── Gradient Text Utility ──────────────────────────── */
+.gradient-text {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Divider ────────────────────────────────────────── */
+hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+}

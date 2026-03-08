@@ -1,0 +1,132 @@
+/* ── Entrance Animation Classes ──────────────────────── */
+
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.65s var(--ease-out-expo), transform 0.65s var(--ease-out-expo);
+}
+
+.animate-fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-slide-right {
+  opacity: 0;
+  transform: translateX(-48px);
+  transition: opacity 0.75s var(--ease-out-expo), transform 0.75s var(--ease-out-expo);
+}
+
+.animate-slide-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-slide-left {
+  opacity: 0;
+  transform: translateX(48px);
+  transition: opacity 0.75s var(--ease-out-expo), transform 0.75s var(--ease-out-expo);
+}
+
+.animate-slide-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger for feature cards */
+.features__grid .feature-card:nth-child(1) { transition-delay: 0ms; }
+.features__grid .feature-card:nth-child(2) { transition-delay: 70ms; }
+.features__grid .feature-card:nth-child(3) { transition-delay: 140ms; }
+.features__grid .feature-card:nth-child(4) { transition-delay: 210ms; }
+.features__grid .feature-card:nth-child(5) { transition-delay: 280ms; }
+.features__grid .feature-card:nth-child(6) { transition-delay: 350ms; }
+
+/* Stagger for pricing cards */
+.pricing__grid .pricing-card:nth-child(1) { transition-delay: 0ms; }
+.pricing__grid .pricing-card:nth-child(2) { transition-delay: 100ms; }
+.pricing__grid .pricing-card:nth-child(3) { transition-delay: 200ms; }
+
+/* Stagger for testimonial cards */
+.testimonials__track .testimonial-card:nth-child(1) { transition-delay: 0ms; }
+.testimonials__track .testimonial-card:nth-child(2) { transition-delay: 100ms; }
+.testimonials__track .testimonial-card:nth-child(3) { transition-delay: 200ms; }
+
+/* ── Keyframes ────────────────────────────────────────── */
+
+@keyframes orbFloat {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(30px, -25px) scale(1.06);
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+  50%       { transform: translateX(-50%) translateY(8px); opacity: 1; }
+}
+
+@keyframes pulseDot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(92,186,138,0.5); }
+  50%       { box-shadow: 0 0 0 5px rgba(92,186,138,0); }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes counterFlip {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Word reveal (hero headline) ─────────────────────── */
+.word-wrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.5s var(--ease-out-expo), transform 0.5s var(--ease-out-expo);
+}
+
+.word.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Hover glow on primary btn ───────────────────────── */
+.btn--primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.12);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.btn--primary:hover::before {
+  opacity: 1;
+}
